@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Ian Test</title>
+    <script type="text/javascript" src="ian.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="questions" class="q-area">
+        questions
+ </div>
+    &nbsp;<br/>
+  <div id="beeLogo">
+  <img class="logo" src="https://s3-alpha-sig.figma.com/img/8894/c768/6db01dd9e299c41277b31ca5fcca22a3?Expires=1547424000&Signature=NY1IK2E~ilF6esVlO3-9hgNGY0KHcTJ5PisRiOwL05PP1ZS2040RNTdqOYvRKB7Ld3OM8xfTQWddPmTvS5T1701Ic3WZxXW4BQ-yrwJ9B1jR4DN3zcr2cbXKmEyShiWic~ahEMgdPEc4Aj17x4O-aNk8ixQ2K8At1SdwdP19m1lFWVRhGye84uh~0mQinrMmKdSGyc~oK4I5VJ0M9yK~qR8MuDEwEzFkjIpWOy6r0s9vlzkB4O7kqIxIpvAR1vfzoCSmPnZ4JcrPOiLjuJZe-6BvrClrKPEUzyaED6Rri1ZZxCZvYqfvvHBfGihtn-XqVnqUfPrMYr7GCPOW8dtXNw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Bee">
+ </div>
+  
+  <div id="leftLogo">
+    <img id="leftBee" src="https://s3-alpha-sig.figma.com/img/a3f2/b27b/4838fb13f6c90ca778390974ffc1f654?Expires=1547424000&Signature=C3CJ1PiTMt1-vAdU9rU2oowDBApL4NfErsysO-T3Za8yKl5mHyrO4PzW35dlTTCNP6I0mFDCz6rHeisrD3jUMmd1V1zlfQIlHu7j1RZJk7lV~d5qyD9oKBp7-g-vECd1FyIL4ZbYMteXsaIuogCBVzhTKuPGRX6Ct~qLsz-Dy2tSGXTfzLZM1oWlI-WgAPcEyXgoFjsVyz-wpf50vkuiuLPm1veDsHdXYrWHyKQHvWEoxH40bgiAz71aO9z6Ov0d-Oxcj8AVtlsokrQfg7mf8NGBhBcMUl8upDDhAC2BMt9kfcE78WnUE8car~6qIdtg7f3l7HdWs12audAx0idI6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Bee">
+  </div>
+  
+    <div id="correct" style="display:none;">
+      <div class="rotate">
+	  <audio id="audio" src="http://www.music.helsinki.fi/tmt/opetus/uusmedia/esim/a2002011001-e02-16kHz.wav" ></audio>
+	
+      <img id="happyBee"  src="https://s3-alpha-sig.figma.com/img/98f6/7394/17064be345d46640302c4759fd7ceb04?Expires=1547424000&Signature=Hyd5X0taXsYS8n9SJkzEwOjdXg3uMVjTwwU9vRvnhb0O97d6y1JcMAb8w47504rUVk7A~eT4fUfTFY7~wJbbspk~SC-88iaP4q6aiTnar4W-qv1fczbILiNwJjr6~u5903Hs7lcuQ51qsltroLcu0knEZ8jGv6y67OohaGuuU4L7DifuU6CWZD6AmhRc2AdEbbMpIs-eM78A0EFSGdbFEjUVVBSNQQvWKvCkvr5NKLNONXzqlsmMsUmTqtuUtXIQosqh5pYE0JnZcheyPj8UCrVeyHpA3dWyaSpIId-fWqfjWnlUX-lUG8yqk5tCoGXM5zFVOPZN0PPrPw-e0TXxCA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Happy Bee">
+    <h1>Correct!</h1>
+        </div>
+    </div>
+  
+    <div id="incorrect" style="display:none;">
+      <img id="cryBee" src="https://s3-alpha-sig.figma.com/img/444e/6c91/248e4feadc2524ec8bbda50d3d3de3d0?Expires=1547424000&Signature=cFgd-iAK1o34PVL8sGLczt6DJWuSra6vxYwJw7gmsFSmLnfgrgQk-4uukK40RXogmaqKzwQnKr10xyla3P0zMVgGQqf70PYZSGTPla70gVMXr8RLejGCgGwuSJSZNaZbKuZd1Nkr9dnWxu1JG4UQUWFa1zRpZG6UoFsApgsqj7BmRgfrLY1s53NHU5mUSmF-RnHCdFMfjxrbWV~kyyDy3ngjNpI4LxhISGrW1~LgsKTkZhghBqJa-sPSqX6ciwx7HZB-QwHBN5WxjJEWiUbss0-MgtV4BiGVv5pdHkAGXeTXNCa48Tzj1DaEnXyCSPQwFyMAH3CpUGsUiz9iKr5QwQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Crying Bee">
+      <h1 class="shake-horizontal">Wrong!</h1>
+      <p id="the-correct-answer"></p>
+    </div>
+  
+    <div id="counts">
+<div id="demo"></div>
+    </div>
+    <script type="text/javascript">
+        nextQuestion();
+    </script>
+</body>
+</html>
