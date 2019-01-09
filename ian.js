@@ -126,8 +126,6 @@ function checkWord(){
     
     if (word == typedWord){ 
         correct();
-		play();//AUDIO
-		//getRandomSounds();//AUDIO?
     } else{
         incorrect();
         //alert ('the correct spelling was: ' + word);
@@ -140,12 +138,7 @@ function checkMulti(clickedIndex){
     if (clickedWord.correct) {
         correct();
     } else {
-        // for (var x = 0; x < questions[index -1].words.length; x++){
-        //     if (questions[index -1].words[x].correct){
-        //         alert('The correct spelling was: '+ questions[index -1].words[x].word);
-        //         break;
-        //     }
-        // }
+     
         var correctWords = questions[index -1].words.filter((checkWord) => { return checkWord.correct == true; } );
        
       //alert('the correct spelling was:' + (correctWords.length > 0 ? correctWords[0].word : 'we have no idea actually, oops'));
@@ -154,17 +147,7 @@ function checkMulti(clickedIndex){
     }
 }
 
- function getRandomSounds() {
-	 var sounds = new Array();
-        sounds[0]="http://www.soundjay.com/button/button-1.wav";
-        sounds[1]="http://www.soundjay.com/button/button-2.wav";
-        sounds[2]="http://www.soundjay.com/button/button-3.wav";   
-        sounds[3]="http://www.soundjay.com/button/button-4.wav";
-        sounds[4]="http://www.soundjay.com/button/button-5.wav";
-            var randomNum = Math.floor(Math.random()*sounds.length);
-            document.getElementById("myaudio").src=sounds[randomNum];
-        }
-      //  getRandomSounds();
+
 
 function correct(){
     var correctDiv = jQuery('#correct');
@@ -184,6 +167,8 @@ function correct(){
     nextQuestion();
     correctCount++;
     updateCountDisplay();
+	play();//SINGLE SOUND
+	playRandom();	//RANDOM SOUND
 }
 
 function incorrect(){
@@ -206,14 +191,30 @@ function incorrect(){
     updateCountDisplay();
 }
 
-
+////////////////////////SINGLE SOUND (src IN DIV)//////////////////////
 function play(){
     var audio = document.getElementById("audio");
     audio.play();
 }
+/////////////////////////////////////RANDOM SOUND///////////////////////////
+ function getRandomSounds() {
+	 var sounds = new Array();
+        sounds[0]="http://www.soundjay.com/button/button-1.wav";
+        sounds[1]="http://www.soundjay.com/button/button-2.wav";
+        sounds[2]="http://www.soundjay.com/button/button-3.wav";   
+        sounds[3]="http://www.soundjay.com/button/button-4.wav";
+        sounds[4]="http://www.soundjay.com/button/button-5.wav";
+            var randomNum = Math.floor(Math.random()*sounds.length);
+        //    document.getElementById("myaudio").src=sounds[randomNum];
+        }
+      // getRandomSounds();
+	
+	function playRandom(){
+		var rdmAudio = document.getElementById("myaudio").src=sounds[randomNum];
+		rdmAudio.play();
+	}
 
-
-
+	
 
 
 function updateCountDisplay(){
