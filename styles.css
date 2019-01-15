@@ -12,6 +12,8 @@ h1 {
   margin: 0px;
 }
 
+
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -40,7 +42,7 @@ position: fixed;
   position: fixed;
   display:inline-block;
   left: -50px;
-  top: 200px;
+  top: 100px;
   
 }
 
@@ -75,7 +77,7 @@ position: fixed;
 #incorrect {
 
  
-  padding-top: 0px;
+  padding-top: -10px;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -94,13 +96,27 @@ position: fixed;
   font-family: arial;
   font-size: 5vw;
   text-align: center;
-  min-height: 90vh;
+  max-height: 100%;
   text-shadow: none;
-  padding-left: 20%;
-  padding-right: 20%;
+  /*padding-left: 20%;
+  padding-right: 20%;*/
+  margin-top: 0px;
 }
 
 
+#the-correct-word {
+  font-family: arial;
+  font-size: 10vw;
+  text-align: center;
+  text-shadow: none;
+  color: #ffab23;
+  width: 12vw;
+  height: 12vw;
+position: fixed;
+  left: 35vw;
+  top: 20vw ;
+  
+}
 
 .q-area {
   text-align: center;
@@ -209,8 +225,149 @@ button {
 @keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
 
 
-.shake-horizontal, #cryBee {-webkit-animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both;animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both}
+.shake-horizontal/*, #cryBee*/ {-webkit-animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both;animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both}
 
 @-webkit-keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}
 
 @keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}
+
+
+
+/*Score Container*/
+.scrCont{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background: #333;
+  padding-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
+ 
+ 
+}
+
+/*All Score Styling*/
+.houseTitle{
+  font-family: 'Oswald', sans-serif;
+  color: #CCC;
+  text-shadow: 1px 1px 5px black;
+  font-size: 3vw;
+  
+}
+.houseScore{
+  font-family: 'Oswald', sans-serif;
+  color: #CCC;
+  text-shadow: 1px 1px 5px black;
+  font-size: 10vw;
+  
+}
+
+/*Individual Score Styling*/
+#lamScore{
+width: auto;
+  height: auto;
+flex-shrink: 1;
+  flex-grow: 1;
+  margin: 5px;
+ /* border-right: 1px solid white;
+  border-left: 1px solid white;*/
+}
+#bailScore{
+width: auto;
+  height: auto;
+ flex-shrink: 1;
+  flex-grow: 1;
+  margin: 5px;
+ /* border-right: 1px solid white;
+  border-left: 1px solid white;*/
+}
+#chelScore{
+width: auto;
+  height: auto;
+ flex-shrink: 1;
+  flex-grow: 1;
+  margin: 5px;
+  /*border-right: 1px solid white;
+  border-left: 1px solid white;*/
+}
+#mercScore{
+width: auto;
+  height: auto;
+flex-shrink: 1;
+  flex-grow: 1;
+  margin: 5px;
+  /*border-right: 1px solid white;
+  border-left: 1px solid white;*/
+}
+#pennScore{
+width: auto;
+  height: auto;
+ flex-shrink: 1;
+  flex-grow: 1;
+  margin: 5px;
+  /*border-right: 1px solid white;
+  border-left: 1px solid white;*/
+}
+
+/*+10 Styling - needs extra JS to incluse -10*/
+#tagA{
+ transform-style: preserve-3d;
+  display: none;
+  position:absolute;
+  /*transform: translateX(-50%);*/
+  font-size:50px;
+  line-height: 400px;
+  color: #23224a;
+}
+
+/*Add/minus score styling*/
+.addMinus{
+  width:30px;
+  height: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-family: arial;
+  font-size: 15px;
+  
+
+}
+
+/*Score IDs for JavaScript*/
+#scoreA{
+  color: #6b4fa1;
+}
+#scoreB{
+  color: #00aeef;
+}
+#scoreC{
+  color: #0b9444;
+}
+#scoreD{
+  color: #ef4036;
+}
+#scoreE{
+  color: #fdd521;
+}
+
+
+
+
+/********************************************COUNTDOWN TIMER**********************************/
+
+#countdown_text{
+display: block;
+  font-family: arial;
+  font-size: 10vw;
+  color: #ffab23;
+  position: fixed;
+  right: 30px;
+  top: 170px ;
+  
+}
